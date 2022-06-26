@@ -17,9 +17,9 @@ pipeline {
                 kubernetes {
                     cloud "jenkins-cloud"
                     namespace 'jenkins'
-                    defaultContainer 'gradle'
-                    yamlFile 'build.yaml'
-                    //defaultContainer 'seed-job-agent'
+                    //defaultContainer 'gradle'
+                    //yamlFile 'build.yaml'
+                    defaultContainer 'seed-job-agent'
                 }
             }
             environment {
@@ -27,7 +27,7 @@ pipeline {
             }
             steps{
                 sh 'ls -la'
-                sh './gradlew test'
+                //sh './gradlew test'
             }
         }
 //         stage("Build PECN DEV integration pipeline") {
