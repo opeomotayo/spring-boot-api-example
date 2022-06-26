@@ -18,7 +18,7 @@ pipeline {
                     cloud "jenkins-cloud"
                     namespace 'jenkins'
                     //defaultContainer 'gradle'
-                    //yamlFile 'build.yaml'
+                    yamlFile 'build.yaml'
                     defaultContainer 'seed-job-agent'
                 }
             }
