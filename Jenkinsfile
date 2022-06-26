@@ -15,19 +15,19 @@ pipeline {
         stage('Unit Tests') {
             agent {
                 kubernetes {
-                    //cloud "jenkins-cloud"
-                    //namespace 'jenkins'
-                    //defaultContainer 'gradle'
-                    //yamlFile 'build.yaml'
-                    defaultContainer 'seed-job-agent'
+                    cloud "jenkins-cloud"
+                    namespace 'jenkins'
+                    defaultContainer 'gradle'
+                    yamlFile 'build.yaml'
+                    //defaultContainer 'seed-job-agent'
                 }
             }
-            //environment {
-                //GRADLE_OPTS = "-Xmx2048m -Dorg.gradle.daemon=false"
-            //}
+            environment {
+                GRADLE_OPTS = "-Xmx2048m -Dorg.gradle.daemon=false"
+            }
             steps{
                 sh 'ls -la'
-                //sh './gradlew test'
+                sh './gradlew test'
             }
         }
 //         stage("Build PECN DEV integration pipeline") {
