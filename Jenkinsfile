@@ -17,9 +17,8 @@ pipeline {
                 kubernetes {
                     cloud "jenkins-cloud"
                     namespace 'jenkins'
-                    //defaultContainer 'gradle'
-                    //yamlFile 'build.yaml'
-                    defaultContainer 'agent1'
+                    defaultContainer 'gradle'
+                    yamlFile 'build.yaml'
                 }
             }
             environment {
